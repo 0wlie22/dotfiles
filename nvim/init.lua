@@ -19,10 +19,18 @@ vim.opt.relativenumber = true
 vim.opt.textwidth = 100
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
--- Keybindings
+-- General keybindings
 local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap("i", "<C-c>", "<Esc>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>f", [[<cmd>lua require("stylua-nvim").format_file()<CR>]], opts)
+vim.api.nvim_set_keymap("i", "<C-c>", "<Esc>", opts)
+
+-- Telescope keybindings
+vim.api.nvim_set_keymap("n", "ff", [[<cmd>lua require("telescope.builtin").find_files()<CR>]], opts)
+vim.api.nvim_set_keymap("n", "fg", [[<cmd>lua require("telescope.builtin").live_grep()<CR>]], opts)
+vim.api.nvim_set_keymap("n", "fb", [[<cmd>lua require("telescope.builtin").buffers()<CR>]], opts)
+vim.api.nvim_set_keymap("n", "fh", [[<cmd>lua require("telescope.builtin").help_tags()<CR>]], opts)
+
+-- Null ls formatting keybindings
+vim.api.nvim_set_keymap("n", "<leader>f", [[<cmd>lua vim.lsp.buf.format()<CR>]], opts)
 
 -- Plugins
 require("lazy").setup("plugins")

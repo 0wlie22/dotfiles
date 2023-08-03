@@ -1,39 +1,11 @@
 return {
 	{
-		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup({})
-		end,
-	},
-
-	{
-		"HiPhish/nvim-ts-rainbow2",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				rainbow = {
-					enable = true,
-					extended_mode = true,
-					max_file_lines = 1000,
-				},
-			})
-		end,
-	},
-
-	{
 		"iamcco/markdown-preview.nvim",
 		run = function()
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
 
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup()
-		end,
-	},
-
-	{ "tpope/vim-fugitive" },
 	{ "christoomey/vim-system-copy" },
 
 	{
@@ -51,13 +23,24 @@ return {
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		cmd = "EditMarkdownTable",
 	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("todo-comments").setup({
+				signs = true,
+			})
+		end,
+	},
 
-	--{"nvim-telescope/telescope.nvim",},
-	--{
-	--  "phaazon/hop.nvim",
-	--  branch = 'v2',
-	--  config = function()
-	--    require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-	--  end
-	--}
+	{ "nvim-telescope/telescope.nvim", tag = "0.1.2", dependencies = { "nvim-lua/plenary.nvim" } },
+
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup({
+				padding = true,
+			})
+		end,
+	},
 }

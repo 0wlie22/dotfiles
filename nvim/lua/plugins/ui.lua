@@ -1,4 +1,5 @@
 return {
+	-- Colorscheme
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -36,4 +37,35 @@ return {
 			})
 		end,
 	},
+
+	-- Parenthesis
+	{
+		"windwp/nvim-autopairs",
+		config = function()
+			require("nvim-autopairs").setup({})
+		end,
+	},
+
+	{
+		"HiPhish/nvim-ts-rainbow2",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				rainbow = {
+					enable = true,
+					extended_mode = true,
+					max_file_lines = 1000,
+				},
+			})
+		end,
+	},
+
+	-- Git
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	},
+
+	{ "tpope/vim-fugitive" },
 }
