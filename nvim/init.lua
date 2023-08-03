@@ -32,6 +32,9 @@ vim.api.nvim_set_keymap("n", "fh", [[<cmd>lua require("telescope.builtin").help_
 -- Null ls formatting keybindings
 vim.api.nvim_set_keymap("n", "<leader>f", [[<cmd>lua vim.lsp.buf.format()<CR>]], opts)
 
+-- Sidebar keybindings
+vim.api.nvim_set_keymap("n", "<leader>o", [[<cmd>SidebarNvimToggle<CR>]], opts)
+
 -- Plugins
 require("lazy").setup("plugins")
 require("md-to-pdf")
