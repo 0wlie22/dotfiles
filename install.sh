@@ -1,3 +1,5 @@
+#! /bin/bash
+
 CYAN="\033[0;36m"
 GREEN="\033[1;32m"
 NC="\033[0m"
@@ -10,15 +12,15 @@ brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font
 
 echo "${CYAN}Creating symlinks{$NC}"
-for file in $PWD/dotfiles/*; do
-	ln -s $file ~/.$(basename $file)
+for file in "$PWD"/dotfiles/*; do
+	ln -s "$file" "$HOME/.$(basename "$file")"
 done
 
 echo "${CYAN}Installing nvim {$NC}"
-ln -s $PWD/nvim ~/.config/nvim
+ln -s "$PWD"/nvim ~/.config/nvim
 
 echo "${CYAN}Installing zsh{$NC}"
-ln -s $PWD/zsh ~/.config/zsh
+ln -s "$PWD"/zsh ~/.config/zsh
 
 echo "${GREEN}Installation complete!${NC}"
 
