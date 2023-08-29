@@ -12,29 +12,27 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Options
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.textwidth = 100
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-
--- General keybindings
-local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap("i", "<C-c>", "<Esc>", opts)
-
--- Telescope keybindings
-vim.api.nvim_set_keymap("n", "ff", [[<cmd>lua require("telescope.builtin").find_files()<CR>]], opts)
-vim.api.nvim_set_keymap("n", "fg", [[<cmd>lua require("telescope.builtin").live_grep()<CR>]], opts)
-vim.api.nvim_set_keymap("n", "fb", [[<cmd>lua require("telescope.builtin").buffers()<CR>]], opts)
-vim.api.nvim_set_keymap("n", "fh", [[<cmd>lua require("telescope.builtin").help_tags()<CR>]], opts)
-
--- Null ls formatting keybindings
-vim.api.nvim_set_keymap("n", "<leader>f", [[<cmd>lua vim.lsp.buf.format()<CR>]], opts)
-
--- Sidebar keybindings
-vim.api.nvim_set_keymap("n", "<leader>o", [[<cmd>SidebarNvimToggle<CR>]], opts)
+require("opts")
 
 -- Plugins
 require("lazy").setup("plugins")
 require("md-to-pdf")
+
+-- Keybindings
+require("keybindings")
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	group = vim.api.nvim_create_augroup("FormatOptions", { clear = true }),
+	pattern = "*",
+	callback = function()
+		vim.opt.formatoptions:remove("a") -- Disable auto formatting
+		vim.opt.formatoptions:remove("t") -- Don't auto-wrap text
+		vim.opt.formatoptions:append("c") -- Auto-wrap comments
+		vim.opt.formatoptions:append("q") -- Allow formatting comments with gq
+		vim.opt.formatoptions:remove("o") -- Don't insert comment leader when formatting
+		vim.opt.formatoptions:append("r") -- Continue comments when pressing Enter
+		vim.opt.formatoptions:append("n") -- Recognize numbered lists, when formatting
+		vim.opt.formatoptions:append("j") -- Remove comment leader when joining lines
+		vim.opt.formatoptions:remove("2") -- Don't use the indent of the second line
+	end,
+})
