@@ -20,4 +20,3 @@ end
 vim.api.nvim_create_user_command("Pdf", M.md_to_pdf, {})
 
 return M
-

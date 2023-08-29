@@ -4,6 +4,7 @@ return {
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.configs").setup({
+				-- For .tpl files add yaml parser
 				highlight = {
 					enable = true,
 					disable = function(_, buf)
