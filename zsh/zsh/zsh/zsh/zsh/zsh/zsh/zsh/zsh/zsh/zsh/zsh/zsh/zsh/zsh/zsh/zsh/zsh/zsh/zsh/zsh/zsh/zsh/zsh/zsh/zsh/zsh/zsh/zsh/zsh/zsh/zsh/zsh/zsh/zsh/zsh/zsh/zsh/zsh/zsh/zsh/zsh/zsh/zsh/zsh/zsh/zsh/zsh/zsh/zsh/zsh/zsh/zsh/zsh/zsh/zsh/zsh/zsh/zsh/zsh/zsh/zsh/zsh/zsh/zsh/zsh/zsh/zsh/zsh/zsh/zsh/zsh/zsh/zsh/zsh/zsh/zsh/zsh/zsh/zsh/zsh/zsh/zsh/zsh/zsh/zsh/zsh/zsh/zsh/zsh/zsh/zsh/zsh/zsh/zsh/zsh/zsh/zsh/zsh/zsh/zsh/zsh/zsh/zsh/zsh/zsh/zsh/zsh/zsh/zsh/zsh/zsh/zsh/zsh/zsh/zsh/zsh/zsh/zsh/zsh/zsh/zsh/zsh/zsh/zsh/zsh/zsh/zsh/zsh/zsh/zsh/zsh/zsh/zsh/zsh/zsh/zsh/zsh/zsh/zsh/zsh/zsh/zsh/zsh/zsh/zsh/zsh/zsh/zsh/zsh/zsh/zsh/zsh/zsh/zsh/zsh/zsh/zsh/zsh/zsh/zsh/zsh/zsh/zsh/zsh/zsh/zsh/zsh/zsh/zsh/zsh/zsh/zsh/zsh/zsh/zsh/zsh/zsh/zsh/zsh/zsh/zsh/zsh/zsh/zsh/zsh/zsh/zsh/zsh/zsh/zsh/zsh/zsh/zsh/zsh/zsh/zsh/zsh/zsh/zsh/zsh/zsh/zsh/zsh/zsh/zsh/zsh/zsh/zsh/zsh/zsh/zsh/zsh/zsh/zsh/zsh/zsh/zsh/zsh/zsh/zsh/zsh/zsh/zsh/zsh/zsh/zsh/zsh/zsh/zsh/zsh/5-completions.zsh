@@ -1,0 +1,38 @@
+# Add custom completion directory to fpath
+unset fpath
+local -a completions
+completions=(
+    /opt/homebrew/share/zsh/site-functions
+    /opt/homebrew/share/zsh/functions
+    $HOME/.local/share/zsh/site-functions
+    $ZSH_CONFIG_DIR/functions
+)
+for dir in $completions; do
+    fpath+=$dir
+done
+unset completions
+
+# Enable completion features
+autoload -Uz compinit && compinit
+autoload bashcompinit && bashcompinit
+zstyle ':complition:*:*:*:*:*' menu select
+zstyle ':complition:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # case insensitive tab complition
+zstyle ':complition:*' list-colors "${(s.:.)LS_COLORS}" 	# Take advantage of $LS_COLORS for completion as well
+# zstyle ':completion:*:*:docker:*' option-stacking yes
+# zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
+# # kubectl certificate manager completion
+if command -v cmctl >/dev/null; then
+    cmctl completion zsh > $HOME/.local/share/zsh/site-functions/_cmctl
+fi
+
+# terraform completion
+if command -v terraform >/dev/null; then
+    complete -o nospace -C $(which terraform) terraform
+fi
+
+# 1passowrd-cli completion
+if command -v op >/dev/null; then
+    eval "$(op completion zsh)"
+    compdef _op op
+fi

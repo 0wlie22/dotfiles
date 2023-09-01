@@ -1,0 +1,5 @@
+function dm() {
+  command=$1
+  docker "$command" "$@"
+  minikube "$command" "$@"
+}
