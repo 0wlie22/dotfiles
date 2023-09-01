@@ -16,6 +16,10 @@ for file in "$PWD"/dotfiles/*; do
 	ln -s "$file" "$HOME/.$(basename "$file")"
 done
 
+# Delete 'Last login' line in terminal
+cd $HOME
+touch .hushlogin
+
 echo "${CYAN}Installing nvim {$NC}"
 ln -s "$PWD"/nvim ~/.config/nvim
 
