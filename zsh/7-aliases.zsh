@@ -52,6 +52,7 @@ add_alias k="kubectl",ka="kubectl apply",kd="kubectl delete",kl="kubectl logs",k
 add_alias h="helm",hi="helm install",hd="helm delete",hl="helm list",hg="helm get",if:helm
 add_alias kns="kubens",if:kubens
 add_alias kctx="kubectx",if:kubectx
+add_alias m="minikube",mt="minikube tunnel",ms="minikube start",mp="minikube stop",if:minikube
 
 # docker
 add_alias d="docker",di="docker images",dn="docker network",dc="docker compose",db="docker build",if:docker
