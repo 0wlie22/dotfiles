@@ -6,6 +6,10 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-web-devicons",
 			"nvim-telescope/telescope-file-browser.nvim",
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = "make",
+			},
 		},
 		opts = function()
 			local actions = require("telescope.actions")
@@ -23,11 +27,17 @@ return {
 						},
 					},
 				},
-				extensions_enable = { "file_browser" },
+				extensions_enable = { "file_browser", "fzf" },
 				extensions = {
 					file_browser = {
 						theme = "dropdown",
 						hijack_netrw = true,
+					},
+					fzf = {
+						fuzzy = true,
+						override_generic_sorter = true,
+						override_file_sorter = true,
+						case_mode = "smart_case",
 					},
 				},
 			}

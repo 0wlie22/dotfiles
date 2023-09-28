@@ -47,3 +47,5 @@ vim.opt.backspace = "2"
 vim.opt.joinspaces = false
 
 vim.opt.clipboard:append("unnamedplus")  -- Use system clipboard
+
+vim.o.completeopt = "menuone,noselect"

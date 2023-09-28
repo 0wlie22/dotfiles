@@ -33,13 +33,19 @@ return {
 		end,
 	},
 
-
 	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup({
 				padding = true,
 			})
+		end,
+	},
+
+	{
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup({})
 		end,
 	},
 }

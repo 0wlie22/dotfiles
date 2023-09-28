@@ -24,6 +24,8 @@ return {
 		},
 		config = function(_, opts)
 			require("copilot").setup(opts)
+            vim.g.copilot_proxy = vim.fn.getenv("http_proxy")
+            vim.g.copilot_proxy_strict_ssl = false
 		end,
 	},
 }
