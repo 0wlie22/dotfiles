@@ -56,3 +56,5 @@ cask "font-powerline-symbols"
 cask "iterm2"
 cask "obsidian"
 cask "rectangle"
+cask "unnaturalscrollwheels"
+
