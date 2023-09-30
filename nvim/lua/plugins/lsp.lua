@@ -10,6 +10,7 @@ return {
             local lspconfig = require("lspconfig")
             lspconfig.pyright.setup({})
             lspconfig.gopls.setup({})
+            lspconfig.custom_elements_ls.setup({})
             lspconfig.lua_ls.setup({
                 settings = {
                     Lua = {
