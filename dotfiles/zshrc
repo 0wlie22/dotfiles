@@ -22,3 +22,5 @@ source ${ZIM_HOME}/init.zsh
 precmd() {
 	source $ZSH_CONFIG_DIR/4-prompt.zsh
 }
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

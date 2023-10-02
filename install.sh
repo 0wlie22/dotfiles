@@ -25,6 +25,8 @@ ln -s "$PWD"/nvim ~/.config/nvim
 
 echo "${CYAN}Installing zsh{$NC}"
 ln -s "$PWD"/zsh ~/.config/zsh
+echo "${CYAN}Installing zsh plugins{$NC}"
+/opt/homebrew/opt/zsh/fzf/install
 
 echo "${GREEN}Installation complete!${NC}"
 

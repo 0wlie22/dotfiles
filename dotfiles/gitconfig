@@ -1,7 +1,6 @@
 [user]
 	email = dari.sedova@gmail.com
-	name = 0wlie22
-	signingKey = 484FFE7B4456F922
+	signingkey = 81A46DDF961CA5BB
 [init]
 	defaultBranch = main
 [pager]
@@ -11,7 +10,7 @@
 [fetch]
 	prune = true
 [core]
-	editor = lvim
+	editor = nvim
 	excludesFile = $HOME/.gitignore_global
 [alias]
 	sw = switch
@@ -22,5 +21,3 @@
 	last = log -1 HEAD
 [commit]
 	gpgsign = true
-[gpg]
-	format = openpgp
