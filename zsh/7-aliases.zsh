@@ -27,7 +27,7 @@ esac
 ## Commonly used commands
 if (( ${+commands[exa]} )); then
     add_alias ls="exa"
-    add_alias la="exa --all --git --group"
+    add_alias la="exa --all --long --git --group"
     add_alias lt="exa --long --git --group -snew"
     add_alias ll="exa --long --git --group"
 else
@@ -54,8 +54,13 @@ add_alias kns="kubens",if:kubens
 add_alias kctx="kubectx",if:kubectx
 add_alias m="minikube",mt="minikube tunnel",ms="minikube start",mp="minikube stop",if:minikube
 
-# docker
+# docker and podman
 add_alias d="docker",di="docker images",dn="docker network",dc="docker compose",db="docker build",if:docker
+add_alias p="podman",pi="podman images",pn="podman network",pc="podman compose",pb="podman build",if:podman
+
+# minikube
+add_alias m="minikube",mt="minikube tunnel",ms="minikube start",mp="minikube stop",if:minikube
+
 
 # ansible
 add_alias a="ansible",ap="ansible-playbook",if:ansible
@@ -75,9 +80,6 @@ add_alias vim="nvim",if:nvim
 
 # brew
 add_alias buu="brew update && brew upgrade",bac="brew autoremove && brew cleanup",if:brew
-
-# minikube
-add_alias m="minikube",mt="minikube tunnel",ms="minikube start",mp="minikube stop",if:minikube
 
 # Git
 add_alias g="git",gs="git status",ga="git add",gaa="git add -A",gc="git commit -S",gcm="git commit -S -m",gp="git push",gl="git log",gd="git diff",gf="git fetch",if:git
