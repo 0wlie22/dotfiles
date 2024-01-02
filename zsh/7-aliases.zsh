@@ -54,9 +54,9 @@ add_alias kns="kubens",if:kubens
 add_alias kctx="kubectx",if:kubectx
 add_alias m="minikube",mt="minikube tunnel",ms="minikube start",mp="minikube stop",if:minikube
 
-# docker and podman
-add_alias d="docker",di="docker images",dn="docker network",dc="docker compose",db="docker build",if:docker
-add_alias p="podman",pi="podman images",pn="podman network",pc="podman compose",pb="podman build",if:podman
+# Docker and Podman
+# add_alias docker="podman",d="podman",di="podman images",dn="podman network",dc="podman compose",db="podman build",if:podman
+# add_alias p="podman",pi="podman images",pn="podman network",pc="podman compose",pb="podman build",if:podman
 
 # minikube
 add_alias m="minikube",mt="minikube tunnel",ms="minikube start",mp="minikube stop",if:minikube

@@ -1,6 +1,8 @@
 [user]
-	email = dari.sedova@gmail.com
+	email = darja.sedova@swisscom.com
 	signingkey = 81A46DDF961CA5BB
+[includeIf "gitdir:~/personal-files/"]
+    path = ~/personal-files/.gitconfig
 [init]
 	defaultBranch = main
 [pager]
