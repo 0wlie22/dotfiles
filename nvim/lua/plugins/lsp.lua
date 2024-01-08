@@ -6,6 +6,10 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        dependencies = {
+            "neodev.nvim",
+        },
+
         config = function()
             local lspconfig = require("lspconfig")
             lspconfig.pyright.setup({})
@@ -61,5 +65,14 @@ return {
         "folke/trouble.nvim",
         cmd = "Trouble",
         opts = {},
+    },
+
+    {
+        "folke/neodev.nvim",
+        opts = {
+            library = {
+                types = true,
+            },
+        },
     },
 }

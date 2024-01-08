@@ -31,13 +31,13 @@ return {
 		main = "ibl",
 		opts = {},
 	},
-	-- {
-	-- 	"sidebar-nvim/sidebar.nvim",
-	-- 	opts = {
-	-- 		open = false,
-	-- 		hide_on_resize = true,
-	-- 	},
-	-- },
+	{
+		"sidebar-nvim/sidebar.nvim",
+		opts = {
+			open = false,
+			hide_on_resize = true,
+		},
+	},
 	{
 		"nvim-neorg/neorg",
 		version = "v6.*",
