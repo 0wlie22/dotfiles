@@ -26,3 +26,6 @@ vim.api.nvim_set_keymap("n", "<leader>lh", [[<cmd>lua vim.lsp.buf.hover()<CR>]],
 vim.api.nvim_set_keymap("n", "<leader>lr", [[<cmd>lua vim.lsp.buf.references()<CR>]], opts)
 vim.api.nvim_set_keymap("n", "<leader>li", [[<cmd>lua vim.lsp.buf.implementation()<CR>]], opts)
 vim.api.nvim_set_keymap("n", "<leader>ln", [[<cmd>lua vim.lsp.buf.rename()<CR>]], opts)
+
+-- Markdown preview
+vim.api.nvim_set_keymap("n", "<leader>mp", [[<cmd>MarkdownPreviewToggle<CR>]], opts)
