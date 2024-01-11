@@ -3,7 +3,9 @@ ZIM_HOME=$HOME/.zim
 
 # Load configuration files
 for file in $(ls -d $ZSH_CONFIG_DIR/*.zsh); do
-    source $file
+    if [[ $file != "5-completions.zsh" ]]; then
+        source $file
+    fi
 done
 
 # Download zimfw plugin manager if missing.
