@@ -10,4 +10,4 @@ zmodule zsh-users/zsh-autosuggestions
 zmodule input
 zmodule fzf
 
-zmodule joke/zim-rtx
+zmodule joke/zim-mise
