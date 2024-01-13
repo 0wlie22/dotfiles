@@ -15,6 +15,7 @@ return {
             lspconfig.pyright.setup({})
             lspconfig.gopls.setup({})
             lspconfig.custom_elements_ls.setup({})
+            lspconfig.matlab_ls.setup({})
             lspconfig.yamlls.setup({})
             lspconfig.clangd.setup({
                 capabilities = vim.tbl_extend("force", vim.lsp.protocol.make_client_capabilities(), {
