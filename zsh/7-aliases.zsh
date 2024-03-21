@@ -56,7 +56,9 @@ add_alias m="minikube",mt="minikube tunnel",ms="minikube start",mp="minikube sto
 
 # Docker and Podman
 # add_alias docker="podman",d="podman",di="podman images",dn="podman network",dc="podman compose",db="podman build",if:podman
-# add_alias p="podman",pi="podman images",pn="podman network",pc="podman compose",pb="podman build",if:podman
+add_alias p="podman",pi="podman images",pn="podman network",pc="podman compose",pb="podman build",if:podman
+add_alias d="docker",di="docker images",dn="docker network",dc="docker compose",db="docker-buildx build",if:docker
+add_alias cl="colima",cls="colima start",clt="colima stop",clsk="colima start --kubernetes",cld="colima delete --force",if:colima
 
 # minikube
 add_alias m="minikube",mt="minikube tunnel",ms="minikube start",mp="minikube stop",if:minikube

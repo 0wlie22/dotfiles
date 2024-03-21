@@ -24,8 +24,8 @@ _path_segment()
 status_segment() {  
 	local segment=
 	if (( $RETVAL )) segment+=' %F{$RED}%f ' 
-	if (( EUID == 0 )) segment+=' %F{yellow}⚡%f'
-	if (( $(jobs -l | wc -l) )) segment+=' %F{cyan}⚙%f'
+	if (( EUID == 0 )) segment+=' %F{yellow}⚡%f '
+	if (( $(jobs -l | wc -l) )) segment+=' %F{cyan}⚙%f '
 	if (( RANGER_LEVEL )) segment+=' %F{cyan}r'
 	if [[ -n ${VIRTUAL_ENV} ]]	segment+='%F{$VENV_COLOR}VENV: ${VIRTUAL_ENV:t}%f '
 	if [[ -n ${SSH_TTY} ]] segment+=' %F{%(!.yellow.default)}%n@%m%f'
