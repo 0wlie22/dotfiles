@@ -12,7 +12,7 @@ brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font
 
 echo "${CYAN}Creating symlinks{$NC}"
-for file in "$PWD"/dotfiles/*; do
+for file in "$PWD"/dotfiles/\.*; do
 	ln -s "$file" "$HOME/.$(basename "$file")"
 done
 

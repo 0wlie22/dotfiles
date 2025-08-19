@@ -1,5 +1,18 @@
 ZSH_CONFIG_DIR=$HOME/.config/zsh
 ZIM_HOME=$HOME/.zim
+export ALL_PROXY="http://127.0.0.1:3128"
+export HTTP_PROXY="http://127.0.0.1:3128"
+export HTTPS_PROXY="http://127.0.0.1:3128"
+export http_proxy="http://127.0.0.1:3128"
+export https_proxy="http://127.0.0.1:3128"
+export ftp_proxy="http://127.0.0.1:3128"
+export DOCKER_HOST="unix://$HOME/.colima/docker.sock"
+export LDFLAGS="-L/usr/local/opt/libomp/lib"
+export CPPFLAGS="-I/usr/local/opt/libomp/include"
+ 
+# As alpaca uses the PAC, there is no need to set no_proxy
+unset no_proxy
+unset NO_PROXY
 
 # Load configuration files
 for file in $(ls -d $ZSH_CONFIG_DIR/*.zsh); do
@@ -26,3 +39,28 @@ precmd() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#compdef gitlab-ci-local
+###-begin-gitlab-ci-local-completions-###
+#
+# yargs command completion script
+#
+# Installation: /opt/homebrew/bin/gitlab-ci-local completion >> ~/.zshrc
+#    or /opt/homebrew/bin/gitlab-ci-local completion >> ~/.zprofile on OSX.
+#
+_gitlab-ci-local_yargs_completions()
+{
+  local reply
+  local si=$IFS
+  IFS=$'
+' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" /opt/homebrew/bin/gitlab-ci-local --get-yargs-completions "${words[@]}"))
+  IFS=$si
+  _describe 'values' reply
+}
+compdef _gitlab-ci-local_yargs_completions gitlab-ci-local
+###-end-gitlab-ci-local-completions-###
+
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
