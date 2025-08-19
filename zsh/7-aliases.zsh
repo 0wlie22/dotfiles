@@ -25,11 +25,11 @@ case $OSTYPE in
 esac
 
 ## Commonly used commands
-if (( ${+commands[exa]} )); then
-    add_alias ls="exa"
-    add_alias la="exa --all --long --git --group"
-    add_alias lt="exa --long --git --group -snew"
-    add_alias ll="exa --long --git --group"
+if (( ${+commands[eza]} )); then
+    add_alias ls="eza"
+    add_alias la="eza --all --long --git --group"
+    add_alias lt="eza --long --git --group -snew"
+    add_alias ll="eza --long --git --group"
 else
     add_alias ls="ls --color=auto"
     add_alias la="ls -la"
@@ -85,3 +85,6 @@ add_alias buu="brew update && brew upgrade",bac="brew autoremove && brew cleanup
 
 # Git
 add_alias g="git",gs="git status",ga="git add",gaa="git add -A",gc="git commit -S",gcm="git commit -S -m",gp="git push",gl="git log",gd="git diff",gf="git fetch",if:git
+
+# Trash
+add_alias rm="trash -F",if:trash

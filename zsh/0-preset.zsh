@@ -71,7 +71,6 @@ local -a autoload_functions
 autoload_functions=(
     add_alias
     et
-    flushdns
     sshagent
     timezsh
 )

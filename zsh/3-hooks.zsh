@@ -1,5 +1,5 @@
 chpwd() {
-    command -v exa &>/dev/null && exa || ls
+    command -v eza &>/dev/null && eza || ls
 }
 
 local new_line_before_prompt=no
@@ -49,5 +49,3 @@ preexec() {
 }
 
 autoload -Uz add-zsh-hook
-autoload -Uz _swproxy
-add-zsh-hook precmd _swproxy
