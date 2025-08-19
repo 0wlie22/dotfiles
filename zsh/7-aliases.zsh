@@ -87,4 +87,4 @@ add_alias buu="brew update && brew upgrade",bac="brew autoremove && brew cleanup
 add_alias g="git",gs="git status",ga="git add",gaa="git add -A",gc="git commit -S",gcm="git commit -S -m",gp="git push",gl="git log",gd="git diff",gf="git fetch",if:git
 
 # Trash
-add_alias rm="trash -F",if:trash
+add_alias rm="trash",if:trash

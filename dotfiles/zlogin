@@ -14,8 +14,8 @@
     unset zfile
 
     completion_dirs=(
-        /opt/homebrew/share/zsh/site-functions
-        /opt/homebrew/share/zsh/functions
+        /usr/local/share/zsh/site-functions
+        /usr/local/share/zsh/functions
         $HOME/.local/share/zsh/site-functions
         $HOME/.config/zsh/functions
         $HOME/.config/zsh/5-completions.zsh

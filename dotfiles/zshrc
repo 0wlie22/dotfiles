@@ -62,5 +62,4 @@ compdef _gitlab-ci-local_yargs_completions gitlab-ci-local
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
-
+# source <(ng completion script)

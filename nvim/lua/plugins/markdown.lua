@@ -16,7 +16,7 @@ return {
         "MeanderingProgrammer/render-markdown.nvim",
         ft = "markdown",
         dependencies = {
-            "3rd/image.nvim",
+            -- "3rd/image.nvim",
             "nvim-treesitter/nvim-treesitter",
             "nvim-tree/nvim-web-devicons",
         },

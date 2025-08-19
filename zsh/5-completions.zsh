@@ -2,8 +2,8 @@
 unset fpath
 local -a completions
 completions=(
-    /opt/homebrew/share/zsh/site-functions
-    /opt/homebrew/share/zsh/functions
+    /usr/local/share/zsh/site-functions
+    /usr/local/share/zsh/functions
     $HOME/.local/share/zsh/site-functions
     $ZSH_CONFIG_DIR/functions
 )
@@ -30,12 +30,6 @@ fi
 if command -v terraform >/dev/null; then
     complete -o nospace -C $(which terraform) terraform
 fi
-
-# # 1passowrd-cli completion
-# if command -v op >/dev/null; then
-#     eval "$(op completion zsh)"
-#     compdef _op op
-# fi
 
 #compdef localstack
 

@@ -10,8 +10,6 @@ local -a custom_path_dirs
 custom_path_dirs=(
     $HOME/.local/bin
     /usr/local/bin
-    /opt/homebrew/bin
-    /opt/homebrew/sbin
     $HOME/.cargo/bin
     /usr/bin
     /usr/sbin
