@@ -1,3 +1,5 @@
 .DS_Store
 .tool-versions
-.mise.toml
+mise.toml
+todo.md
+test-data

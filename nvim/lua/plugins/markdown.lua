@@ -20,7 +20,9 @@ return {
             "nvim-treesitter/nvim-treesitter",
             "nvim-tree/nvim-web-devicons",
         },
-        opts = {},
+        opts = {
+            mkdp_port = 8000,
+        },
     },
     -- {
     -- 	"3rd/image.nvim",

@@ -11,3 +11,4 @@ zmodule input
 zmodule fzf
 
 zmodule joke/zim-mise
+zmodule fielding/zsh-brew-switcher

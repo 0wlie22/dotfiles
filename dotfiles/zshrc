@@ -9,6 +9,8 @@ export ftp_proxy="http://127.0.0.1:3128"
 export DOCKER_HOST="unix://$HOME/.colima/docker.sock"
 export LDFLAGS="-L/usr/local/opt/libomp/lib"
 export CPPFLAGS="-I/usr/local/opt/libomp/include"
+export GOROOT="/usr/local/go"
+export PATH="$PATH:$HOME/go/bin"
  
 # As alpaca uses the PAC, there is no need to set no_proxy
 unset no_proxy
@@ -58,6 +60,7 @@ _gitlab-ci-local_yargs_completions()
 }
 compdef _gitlab-ci-local_yargs_completions gitlab-ci-local
 ###-end-gitlab-ci-local-completions-###
+eval "$(mise activate zsh)"
 
 
 

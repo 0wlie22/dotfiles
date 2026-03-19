@@ -1,6 +1,7 @@
 [user]
 	email = darja.sedova@swisscom.com
-	signingkey = 52B87AA9297DCD8F
+	signingkey = 2D4BC688EA7FF745
+    name = Darja Sedova
 [includeIf "gitdir:~/personal-files/**/.git"]
     path = ~/personal-files/.gitconfig
 [init]
@@ -14,6 +15,7 @@
 [core]
 	editor = nvim
 	excludesFile = ~/.gitignore_global
+	hooksPath = /Users/taasedae/.config/git/hooks
 [alias]
 	last = log -1 HEAD
 [commit]

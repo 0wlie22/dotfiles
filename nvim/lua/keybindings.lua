@@ -40,7 +40,13 @@ wk.register({
 		i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
 		n = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
 	},
-	m = { name = "markdown", p = { "<cmd>MarkdownPreviewToggle<CR>", "Toggle Markdown Preview" } },
+
+	p = {
+		name = "preview",
+		m = { "<cmd>MarkdownPreviewToggle<CR>", "Toggle Markdown Preview" },
+		s = { "<cmd>SwaggerPreviewToggle<CR>", "Toggle Swagger Preview" },
+	},
+
 	-- Git
 	g = {
 		name = "+git",
