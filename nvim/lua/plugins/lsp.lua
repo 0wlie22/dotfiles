@@ -11,16 +11,7 @@ return {
 	},
 	{
 		"b0o/schemastore.nvim",
-		config = function()
-			require("lspconfig").jsonls.setup({
-				settings = {
-					json = {
-						schemas = require("schemastore").json.schemas(),
-						validate = true,
-					},
-				},
-			})
-		end,
+		lazy = true,
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -31,7 +22,6 @@ return {
 		config = function()
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-			local lspconfig = require("lspconfig")
 
 			local servers = {
 				pyright = {
@@ -89,7 +79,6 @@ return {
 				lemminx = {},
 				jdtls = {
 					cmd = { "jdtls" },
-					root_dir = lspconfig.util.root_pattern("pom.xml", "gradle.build", ".git"),
 					init_options = {
 						extendedClientCapabilities = {
 							classFileContentsSupport = true,
@@ -146,12 +135,13 @@ return {
 			}
 
 			for server, config in pairs(servers) do
-				lspconfig[server].setup(vim.tbl_extend("force", {
+				vim.lsp.config(server, vim.tbl_extend("force", {
 					capabilities = capabilities,
 					flags = {
 						debounce_text_changes = 150,
 					},
 				}, config))
+				vim.lsp.enable(server)
 			end
 		end,
 	},

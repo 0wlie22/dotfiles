@@ -89,6 +89,8 @@ return {
 					file_browser = {
 						theme = "ivy",
 						hijack_netrw = true,
+						collapse_dirs = true,
+                        git_status = false,
 					},
 					fzf = {
 						fuzzy = true,
