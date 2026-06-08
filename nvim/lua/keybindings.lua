@@ -26,7 +26,7 @@ wk.register({
 		b = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
 		h = { "<cmd>lua require('telescope.builtin').help_tags()<CR>", "Help Tags" },
 		e = {
-			"<cmd>lua require('telescope').extensions.file_browser.file_browser({ path = '%:p:h', respect_gitignore = false })<CR>",
+			"<cmd>lua require('telescope').extensions.file_browser.file_browser({ path = '%:p:h', respect_gitignore = false, hidden = true })<CR>",
 			"File Browser",
 		},
 	},
